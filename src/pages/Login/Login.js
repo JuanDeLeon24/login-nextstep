@@ -1,12 +1,12 @@
 import React from "react";
-import title from './components/title/title'
+import Title from './components/input/title/Title'
 
 const login = () => {
     return(
         <div>
-            Soy un login temporal
+            <Title />
         </div>
     )
 }
 
-export default title;
+export default Title;
