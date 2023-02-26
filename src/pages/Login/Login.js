@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import './Login.css'
-import Title from './components/Title/Title'
+import Title from './components/Title/Title';
 import Label from "./components/Label/Label";
 import Input from "./components/Input/Input";
+
 
 const Login = () => {
 
     const [ user, setUser ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ passwordError, setPasswordError ] = useState(false);
+    const [ isLogin, setIsLogin ] = useState(false);
+    const [ hasError, setHasError ] = useState(false);
 
-    function handleChange(name, value){
+    function handleChange(name, value) {
         if(name === 'usuario'){
             setUser(value)
         } else {
@@ -23,17 +26,42 @@ const Login = () => {
         }
     };
 
-    function handleSubmit(){
-        let account = {user, password}
-        if(account){
-            console.log('account: ', account)
+    function ifMatch(param) {
+        if(param.user.length > 0 && param.password.length > 0){
+            if(param.user === 'jsdeleon' && param.password === 'jsdeleon'){
+                const { user, password} = param;
+                let ac = {user, password};
+                let account = JSON.stringify(ac);
+                localStorage.setItem('account', account);
+                setIsLogin(true);
+            } else {
+                setIsLogin(false);
+                setHasError(true);
+            }
+        } else {
+            setIsLogin(false);
+            setHasError(true);
+        }
+    }
+
+    function handleSubmit() {
+        let account = { user, password }
+        if(account) {
+            ifMatch(account);
         }
     };
 
     return(
         <div className='login-container'>
+                
                 <div className='login-content'>
-                    <Title text='¡Bienvenido a NexStep!'/>
+                    <Title text='¡Welcome to NexStep!'/>
+                    {hasError &&
+                    <label className="label-alert">
+                        ¡Wrong username or password!,
+                        please try again.
+                         </label>
+                    }
                     <Label text='Username'/>
                     <Input 
                     attribute={{
@@ -56,7 +84,7 @@ const Login = () => {
                 handleChange={handleChange}
                 param={passwordError}
                 />
-                
+
                 { passwordError &&
                     <label className='label-error'>
                         ¡Wrong password!
