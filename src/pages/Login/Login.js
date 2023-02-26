@@ -1,12 +1,19 @@
 import React from "react";
-import Title from './components/input/title/Title'
+import './Login.css'
+import Title from './components/Title/Title'
+import Label from "./components/Label/Label";
+import Input from "./components/Input/Input";
 
-const login = () => {
+const Login = () => {
     return(
-        <div>
-            <Title />
+        <div className='login-container'>
+            <Title text='No soy un titulo'/>
+            <Label text='Usuario'/>
+            <Input />
+            <Label text='Contraseña'/> 
+            <Input />
         </div>
     )
-}
+};
 
-export default Title;
+export default Login;
