@@ -3,7 +3,7 @@ import './Login.css'
 import Title from './components/Title/Title';
 import Label from "./components/Label/Label";
 import Input from "./components/Input/Input";
-
+import LoginGoogle from "./LoginGoogle";
 
 const Login = () => {
 
@@ -55,7 +55,7 @@ const Login = () => {
         <div className='login-container'>
                 
                 <div className='login-content'>
-                    <Title text='¡Welcome to NexStep!'/>
+                    <Title text='¡Welcome to NextStep!'/>
                     {hasError &&
                     <label className="label-alert">
                         ¡Wrong username or password!,
@@ -97,6 +97,9 @@ const Login = () => {
                      </button>
                 </div>
             </div>
+                <div>
+                    <LoginGoogle/>
+                </div>
         </div>
     )
 };
