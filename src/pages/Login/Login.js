@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Login.css'
 import Title from './components/Title/Title';
 import Label from "./components/Label/Label";
-import Input from "./components/Input/Input";
+import Input from "./components/input/Input";
 import LoginGoogle from "./LoginGoogle";
 
 const Login = () => {
@@ -95,11 +95,9 @@ const Login = () => {
                      <button onClick={handleSubmit} className='submit-button-container'>
                           Login
                      </button>
+                     <LoginGoogle />
                 </div>
             </div>
-                <div>
-                    <LoginGoogle/>
-                </div>
         </div>
     )
 };
