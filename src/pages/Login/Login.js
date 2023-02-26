@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './Login.css'
 import Title from './components/Title/Title'
 import Label from "./components/Label/Label";
@@ -11,12 +11,12 @@ const Login = () => {
     const [ passwordError, setPasswordError ] = useState(false);
 
     function handleChange(name, value){
-        if(name === 'Usuario'){
+        if(name === 'usuario'){
             setUser(value)
-        }else {
+        } else {
             if(value.length < 8){
                 setPasswordError(true);
-            }else{
+            } else {
                 setPasswordError(false)
                 setPassword(value)
             }
@@ -33,14 +33,14 @@ const Login = () => {
     return(
         <div className='login-container'>
                 <div className='login-content'>
-                <Title text='¡Bienvenido a NexStep!'/>
-                <Label text='Username'/>
-                <Input 
-                attribute={{
-                    id: 'usuario',
-                    name: 'usuario',
-                    type: 'text',
-                    placeholder: 'Enter your username'
+                    <Title text='¡Bienvenido a NexStep!'/>
+                    <Label text='Username'/>
+                    <Input 
+                    attribute={{
+                     id: 'usuario',
+                     name: 'usuario',
+                     type: 'text',
+                     placeholder: 'Enter your username'
                 }}
                 handleChange={handleChange}
                 />
@@ -56,6 +56,13 @@ const Login = () => {
                 handleChange={handleChange}
                 param={passwordError}
                 />
+                
+                { passwordError &&
+                    <label className='label-error'>
+                        ¡Wrong password!
+                    </label>
+                }
+
                 <div className='submit-button-container'>
                      <button onClick={handleSubmit} className='submit-button-container'>
                           Login
