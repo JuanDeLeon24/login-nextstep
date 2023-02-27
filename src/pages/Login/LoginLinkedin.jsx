@@ -18,7 +18,7 @@ const LoginLinkedin = () => {
     <LinkedIn
       clientId={clientId}
       clientSecret={clientSecret}
-      redirectUri="http://localhost:3000"
+      redirectUri="http://localhost:3000/auth/linkedin/callback"
       onSuccess={handleSuccess}
       onFailure={handleFailure}
       renderElement={({ onClick, disabled }) => (
