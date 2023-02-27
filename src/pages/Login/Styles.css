@@ -1,13 +1,13 @@
 .submit-button {
-  background-color: transparent;
-  border: 2px solid #ccc;
-  font-size: 16px;
-  padding: 8px 12px;
+  background-image: linear-gradient(to right, #6f52ed, #01ddf1);
+  border: 2px solid #030101;
+  font-size: 14px;
+  padding: 0.5px 3px;
   cursor: pointer;
-  width: 20vw;
-  color: rgb(160, 149, 149);
+  width: 30vw;
+  color: rgb(0, 0, 0);
 }
-  
+
 .submit-button:hover {
-  background-color: #e95e5e;
+  background-image: linear-gradient(to right, #01ddf1, #6f52ed);
 }
