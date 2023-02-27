@@ -4,13 +4,14 @@ import Title from './components/Title/Title';
 import Label from "./components/Label/Label";
 import Input from "./components/Input/Input";
 import LoginGoogle from "./LoginGoogle";
+import LoginLinkedin from './LoginLinkedin';
 
 const Login = () => {
 
     const [ user, setUser ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ passwordError, setPasswordError ] = useState(false);
-    const [ isLogin, setIsLogin ] = useState(false);
+    const [ setIsLogin ] = useState(false);
     const [ hasError, setHasError ] = useState(false);
 
     function handleChange(name, value) {
@@ -58,8 +59,7 @@ const Login = () => {
                     <Title text='¡Welcome to NextStep!'/>
                     {hasError &&
                     <label className="label-alert">
-                        ¡Wrong username or password!,
-                        please try again.
+                        Please try again!
                          </label>
                     }
                     <Label text='Username'/>
@@ -96,6 +96,7 @@ const Login = () => {
                           Login
                      </button>
                      <LoginGoogle />
+                     <LoginLinkedin />
                 </div>
             </div>
         </div>

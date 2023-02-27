@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { auth, provider } from './firebase.js';
 import {signInWithPopup} from 'firebase/auth'
 import Home from '../Home/Home';
+import styles from './Styles.css';
+
 
 function LoginGoogle() {
   const [value, setValue] = useState('');
@@ -18,10 +20,14 @@ function LoginGoogle() {
   })
 
   return (
-    <div>
-      {value?<Home />:
-      <button onClick={handleClick}>Sing in with google</button>
-      }
+    <div className={styles['submit-button-container']}>
+      {value ? (
+        <Home />
+      ) : (
+        <button onClick={handleClick} className={styles['submit-button']}>
+          Sign in with Google
+        </button>
+      )}
     </div>
   );
 }

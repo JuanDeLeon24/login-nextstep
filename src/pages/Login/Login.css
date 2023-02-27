@@ -80,8 +80,8 @@
     background: rgb(230, 155, 155);
     width: fit-content;
     height: fit-content;
-    padding: 5px;
+    padding: 0.8px;
     box-sizing: border-box;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    border-radius: 3px;
+    margin-bottom: 0.5px;
 }
