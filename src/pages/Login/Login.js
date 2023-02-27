@@ -4,7 +4,9 @@ import Title from './components/Title/Title';
 import Label from "./components/Label/Label";
 import Input from "./components/Input/Input";
 import LoginGoogle from "./LoginGoogle";
+import './Styles.css';
 import LoginLinkedin from './LoginLinkedin';
+
 
 const Login = () => {
 
@@ -92,11 +94,12 @@ const Login = () => {
                 }
 
                 <div className='submit-button-container'>
-                     <button onClick={handleSubmit} className='submit-button-container'>
+                     <button onClick={handleSubmit} className='submit-button'>
                           Login
                      </button>
                      <LoginGoogle />
                      <LoginLinkedin />
+                     
                 </div>
             </div>
         </div>

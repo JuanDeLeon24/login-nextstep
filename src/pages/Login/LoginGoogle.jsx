@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { auth, provider } from './firebase.js';
 import {signInWithPopup} from 'firebase/auth'
 import Home from '../Home/Home';
-import styles from './Styles.css';
+import './Styles.css';
 
 
 function LoginGoogle() {
@@ -20,11 +20,11 @@ function LoginGoogle() {
   })
 
   return (
-    <div className={styles['submit-button-container']}>
+    <div className='submit'>
       {value ? (
         <Home />
       ) : (
-        <button onClick={handleClick} className={styles['submit-button']}>
+        <button onClick={handleClick} className='submit-button'>
           Sign in with Google
         </button>
       )}
